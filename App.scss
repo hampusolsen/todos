@@ -1,0 +1,128 @@
+@import url(https://fonts.googleapis.com/css?family=Asap:400i|Lato|Merriweather|Poppins|Source+Sans+Pro&display=swap);
+@import './css/mixvars';
+@import './css/globals';
+@import './css/login';
+@import './css/register';
+@import './css/form';
+@import './css/main';
+@import './css/mainListView';
+@import './css/newListView';
+@import './css/listView';
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    border: none;
+    background: none;
+    outline: none;
+    text-decoration: none;
+    border-spacing: none;
+    border-collapse: collapse;
+    list-style: none;
+    box-shadow: none;
+}
+
+body, html {
+    height: 100vh;
+    font-size: 16px;
+    background-color: #e6e6e6;
+}
+
+h1 {
+    font-family: 'Asap', sans-serif;
+}
+
+h2 {
+    font-family: 'Merriweather', serif;
+}
+
+p {
+    font-family: 'Lato', sans-serif;
+}
+
+button, a {
+    font-family: 'Poppins', sans-serif;
+}
+
+button {
+    padding: 8px 16px;
+    border-radius: 32px;
+    color: white;
+}
+
+#root {
+    height: 100%;
+    display: grid;
+    grid-template:
+        'header' 122px
+        'page' 
+        'footer' 36px;
+    
+    > main {
+        grid-area: page;
+        @include flexCC();
+    }
+
+    > header {
+        background-color: #242424;
+        z-index: 1;
+        @include flexAlign();
+
+        .logo {
+            height: 122px;
+            width: 300px;
+            @include flexCC;
+
+            &__background {
+                height: 45px;
+                width: 45px;
+                background: 
+                    radial-gradient(circle at top, #C6FFDD 10%, transparent),
+                    radial-gradient(circle at left, #f7797d, transparent),
+                    radial-gradient(circle at bottom, #FBD786, transparent),
+                    radial-gradient(circle at bottom, rgb(224, 134, 251), transparent);
+                border-radius: 50% 20% / 20% 50%;;
+                transform: translateX(15px)rotate(45deg);
+                box-shadow: 5px 5px 10px rgba(0,0,0,0.6);
+            }
+
+            &__text {
+                text-indent: 42px;
+                font-family: 'Source Sans Pro', sans-serif;
+                color: white;
+                font-size: 3em;
+                z-index: 1;
+                text-shadow: 2px 2px 3px black;
+            }
+        }
+
+        .tagline {
+            color: whitesmoke;
+            display: inline-block;
+            font-style: italic;
+            font-size: 0.8em;
+
+            span {
+                color: black;
+                margin-left: 12px;
+            }
+        }
+    }
+
+    > footer {
+        background-color: #272727;
+        grid-area: footer;
+        @include flexCC();
+        z-index: 1;
+
+        p {
+            color: white;
+            
+            span {
+                color: orangered;
+                font-weight: bold;
+            }
+        }
+    }
+}
